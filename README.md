@@ -42,6 +42,7 @@ Flow
 
 Image
 - ptImage
+- ptOutputImage
 
 IO
 - ptLoader

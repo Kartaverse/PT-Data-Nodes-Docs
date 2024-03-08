@@ -8,6 +8,12 @@ These files are located on disk in the Reactor PathMap based folder:
 
         Reactor:/Deploy/Comps/Kartaverse/PT/Demo PT/
 
+## PT Demo OutputImage v001.comp
+
+Read a PTGui .pts JSON file and load the final rendered panorama image that is referenced in the PTGui document.
+
+![ptOutputImage Example 1](images/comp-Demo-PT-OutputImage.png)
+
 ## Demo PT FBX Camera v001.comp
 
 Read a PTGui .pts JSON file and create a 3D camera by extracting the camera rotation values, focal length, and source image names. The animated camera is then exported to an FBX file that can be loaded into other 3D packages.

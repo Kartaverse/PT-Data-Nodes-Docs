@@ -68,6 +68,14 @@ Image Sequence Filename Example:
 
         CameraA.[0001-0144].jpg
 
+### ptOutputImage
+
+The "ptOutputImage" node loads the final rendered panorama image that is referenced in the PTGui document. The output is an image datatype.
+
+This node requires that the PTGui .pts was saved with the "Create Panorama > Output File > [x] Use Default" checkbox disabled. This means you defined the image filename manually in the "Output File" textfield that will be used when a newly stitched panorama is saved to disk.
+
+![ptOutputImage](images/fuse-ptOutputImage.png)
+
 ## IO
 
 ### ptLoader
