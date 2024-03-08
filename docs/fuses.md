@@ -45,7 +45,7 @@ or
 
 ### ptImage
 
-A "ptImage" node accesses the source images referenced in the .pts file. The output is a raster image.
+A "ptImage" node accesses the source images referenced in the .pts file.  The output is an image datatype.
 
 ![ptImage](images/fuse-ptImage.png)
 
@@ -91,7 +91,7 @@ Note: PTGui is very picky about the .pts based JSON files it is willing to load.
 
 ### ptMask
 
-A "ptMask" node accesses the hand painted masking data stored in the .pts file.
+A "ptMask" node accesses the hand painted masking data stored in the .pts file. The output is an image datatype.
 
 ![ptMask](images/fuse-ptMask.png)
 
@@ -152,6 +152,8 @@ Typical Node Connections:
 
 The "ptFocalLength" node allows you to read the focal length value (in millimetres) for each of the lenses in the PTGui file. This can be used to drive the focal length on a Camera3D node.
 
+The output is a number datatype.
+
 ![ptFocalLength](images/fuse-ptFocalLength.png)
 
 The focal length value output by this node can also be used with the "ptOptimumOutputSize" node.
@@ -162,7 +164,7 @@ Typical Node Connections:
 
 ### ptImageCount
 
-The "ptImageCount" node returns the total number of source images in a PTGui .pts document.
+The "ptImageCount" node returns the total number of source images in a PTGui .pts document.  The output is a number datatype.
 
 ![ptImageCount](images/fuse-ptImageCount.png)
 
@@ -172,7 +174,7 @@ Typical Node Connections:
 
 ### ptImageSize
 
-The "ptImageSize" node returns the image width and height parameters for a PTGui .pts source image.
+The "ptImageSize" node returns the image width and image height parameters for a PTGui .pts source image. The output is a pair of number datatypes.
 
 ![ptImageSize](images/fuse-ptImageSize.png)
 
@@ -182,7 +184,7 @@ Typical Node Connections:
 
 ### ptLensCount
 
-The "ptLensCount" node calculates the total number of PTGui Global Lens entries.
+The "ptLensCount" node calculates the total number of PTGui Global Lens entries. The output is a number datatype.
 
 ![ptLensCount](images/fuse-ptLensCount.png)
 
@@ -201,7 +203,7 @@ Typical Node Connections:
 ### ptImageFilename
 
 
-The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file.
+The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file. The output is a string datatype.
 
 ![ptImageFilename](images/fuse-ptImageFilename.png)
 
@@ -213,7 +215,7 @@ Typical Node Connections:
 
 ### ptOutputFilename
 
-The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk.
+The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk. The output is a string datatype.
 
 ![ptOutputFilename](images/fuse-ptOutputFilename.png)
 
@@ -229,7 +231,7 @@ Typical Node Connections:
 
 ### ptInfo
 
-The "ptInfo" node peeks into the contents of the live PTGui data stream. This is a handy diagnostic tool.
+The "ptInfo" node peeks into the contents of the live PTGui data stream. This is a handy diagnostic tool. The ptInfo input and output connections are ScriptVal datatypes.
 
 ![ptInfo](images/fuse-ptInfo.png)
 
@@ -240,6 +242,8 @@ Typical Node Connections:
 ### ptOptimumOutputSize
 
 This node allows you to calculate the best output size to use when stitching a 360VR panorama. This calculation is based upon the focal length (in mm), image sensor size (in mm), and the source image size (in pixels).
+
+The output is a number datatype that represents the idea LatLong image width in pixels.
 
 The formula used for the optimum panoramic output size comes from the following PTGui documentation topics:  
 [How does PTGui calculate the optimum output size of a panorama?](https://ptgui.com/support.html#3_26)
