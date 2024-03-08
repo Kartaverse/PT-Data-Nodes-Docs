@@ -4,7 +4,20 @@
 
 ### ptSwitch
 
+The "ptSwitch" node allows you to toggle between several different ScriptVal based input connections to select which data stream you want to access.
+
 ![ptSwitch](images/fuse-ptSwitch.png)
+
+The "Which" control on the ptSwitch node is used to select the current input connection you would like to access ScriptVal data from.
+
+
+#### Comparing Multiple PTGui Files
+
+A common use case for the ptSwitch node would be to allow you to have multiple ptLoder nodes in your comp at the same time. Each ptLoader node would be pointed at a specific .pts file that has slightly different settings. 
+
+You can then change the ptSwitch node's "Which" control to cycle through the different PTGui .pts files quickly to compare the results in a consistent and organized fashion.
+
+![ptSwitch Tip 1](images/tip-ptSwitch-1.png)
 
 ### ptWireless
 
@@ -16,19 +29,23 @@ The Wireless link connection is created by holding down the middle mouse button,
 
 Typical Node Connections:
 
-        ptLoader > ptWireless > ptImage
-        ptLoader > ptWireless > ptMask
+        ptLoader > ptWireless > ptRotation > Camera3D
 
 or 
 
-        ptLoader > ptWireless > ptRotation > Camera3D
+        ptLoader > ptWireless > ptMask
 
+or
+
+        ptLoader > ptWireless > ptImage
+
+![ptWireless Tip 1](images/tip-ptWireless-1.png)
 
 ## Image
 
 ### ptImage
 
-A "ptImage" node accesses the source images referenced in the .pts file.
+A "ptImage" node accesses the source images referenced in the .pts file. The output is a raster image.
 
 ![ptImage](images/fuse-ptImage.png)
 
@@ -36,8 +53,10 @@ The "Index" control allows you to cycle through each of the source images. If yo
 
 Typical Node Connections:
 
-        ptLoader > ptImage 
+        ptLoader > ptImage > ColorCorrector
 
+
+![ptImage Tip 1](images/tip-ptImage-1.png)
 
 #### Image Sequence Handling
 
@@ -51,7 +70,7 @@ Image Sequence Filename Example:
 
 ### ptLoader
 
-A "ptLoader" node imports an existing PTGui .pts file from disk.
+A "ptLoader" node imports an existing PTGui .pts file from disk. The output from the ptLoader node is a Fusion ScriptVal data type that stores the PTGui information inside a Lua table structure that can be read by other nodes.
 
 ![ptLoader](images/fuse-ptLoader.png)
 
@@ -59,7 +78,7 @@ This node supports the use of Fusion "PathMaps". This allows short form values l
 
 ### ptSaver
 
-A "ptSaver" node exports the ScriptVal content back to a JSON file. 
+A "ptSaver" node exports the Fusion ScriptVal content back to a JSON file. 
 
 ![ptSaver](images/fuse-ptSaver.png)
 
@@ -81,6 +100,10 @@ The "Asset Mode" control can be set to "Image ID" or "Mask ID".
 When the "Image ID" mode is used you are accessing the masks based upon the index number of the source images defined in the .pts file.
 
 When the "Mask ID" mode is used you are accessing the masks based upon the index number of the individual mask assets stored in the .pts file.
+
+Typical Node Connections:
+
+        ptLoader > ptMask1
 
 #### Applying a PTGui Red Exclude Mask to an Image
 
@@ -113,7 +136,6 @@ Typical Node Connections:
 
         ptLoader > ptMatrix > vMatrixToRotation > Camera3D
 
-
 ### ptRotation
 
 The "ptRotation" node allows you to directly access the XYZ rotation values for each PTGui source image. This rotation data can be used to rotate a Camera3D node.
@@ -134,11 +156,19 @@ The "ptFocalLength" node allows you to read the focal length value (in millimetr
 
 The focal length value output by this node can also be used with the "ptOptimumOutputSize" node.
 
+Typical Node Connections:
+
+        ptLoader > ptFocalLength
+
 ### ptImageCount
 
 The "ptImageCount" node returns the total number of source images in a PTGui .pts document.
 
 ![ptImageCount](images/fuse-ptImageCount.png)
+
+Typical Node Connections:
+
+        ptLoader > ptImageCount
 
 ### ptImageSize
 
@@ -146,12 +176,19 @@ The "ptImageSize" node returns the image width and height parameters for a PTGui
 
 ![ptImageSize](images/fuse-ptImageSize.png)
 
+Typical Node Connections:
+
+        ptLoader > ptImageSize
+
 ### ptLensCount
 
 The "ptLensCount" node calculates the total number of PTGui Global Lens entries.
 
 ![ptLensCount](images/fuse-ptLensCount.png)
 
+Typical Node Connections:
+
+        ptLoader > ptLensCount
 
 
 ## Point
@@ -170,6 +207,10 @@ The "ptImageFilename" node returns the source image filename that PTGui uses whe
 
 If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
 
+Typical Node Connections:
+
+        ptLoader > ptImageFilename > vTextViewer
+
 ### ptOutputFilename
 
 The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk.
@@ -180,6 +221,10 @@ This information is based upon the value saved in the .pts file using the conten
 
 If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
 
+Typical Node Connections:
+
+        ptLoader > ptOutputFilename > vTextViewer
+
 ## Utility
 
 ### ptInfo
@@ -188,13 +233,24 @@ The "ptInfo" node peeks into the contents of the live PTGui data stream. This is
 
 ![ptInfo](images/fuse-ptInfo.png)
 
+Typical Node Connections:
+
+        ptLoader > ptInfo
+
 ### ptOptimumOutputSize
 
 This node allows you to calculate the best output size to use when stitching a 360VR panorama. This calculation is based upon the focal length (in mm), image sensor size (in mm), and the source image size (in pixels).
 
-![ptOptimumOutputSize](images/fuse-ptOptimumOutputSize.png)
-
 The formula used for the optimum panoramic output size comes from the following PTGui documentation topics:  
 [How does PTGui calculate the optimum output size of a panorama?](https://ptgui.com/support.html#3_26)
 
+![ptOptimumOutputSize](images/fuse-ptOptimumOutputSize.png)
+
+![ptOptimumOutputSize Tip 1](images/tip-ptOptimumOutputSize-1.png)
+
+Typical Node Connections:
+
+        ptLoader > ptFocalLength.Output > ptOptimumOutputSize.FocalLength
+        ptLoader > ptImageSize.Width > ptOptimumOutputSize.ImageWidth
+        vNumberCompReqTime > ptImageSize.Index
 
