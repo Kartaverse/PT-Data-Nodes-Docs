@@ -34,7 +34,7 @@ For more information about the individual PT nodes check out the [Fuse reference
 
 ## PT Node Categories
 
-The PT data nodes are separated into the following categories and sub-categories based upon the function they perform:
+The PT data nodes are separated into the following categories and sub-categories based on the function they perform:
 
 Flow
 - ptSwitch

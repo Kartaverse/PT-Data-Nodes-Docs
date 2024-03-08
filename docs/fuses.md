@@ -23,7 +23,7 @@ You can then change the ptSwitch node's "Which" control to cycle through the dif
 
 ### ptWireless
 
-The ptWireless node allows you to create links between nodes without displaying a wireline connection in the node graph. This can help make a complex comp tidy if there would be wires crossing all over the place.
+The ptWireless node allows you to create links between nodes without displaying a wireline connection in the node graph. This can help make a complex comp tidy if there are wires crossing all over the place.
 
 ![ptWireless](images/fuse-ptWireless.png)
 
@@ -51,7 +51,7 @@ A "ptImage" node accesses the source images referenced in the .pts file.  The ou
 
 ![ptImage](images/fuse-ptImage.png)
 
-The "Index" control allows you to cycle through each of the source images. If you move the Index control past the number of source images found in the .pts file it will hold on the last image.
+The "Index" control allows you to cycle through each of the source images. If you move the Index control past the number of source images found in the .pts file it will hold on to the last image.
 
 Typical Node Connections:
 
@@ -99,9 +99,9 @@ A "ptMask" node accesses the hand painted masking data stored in the .pts file. 
 
 The "Asset Mode" control can be set to "Image ID" or "Mask ID".
 
-When the "Image ID" mode is used you are accessing the masks based upon the index number of the source images defined in the .pts file.
+When the "Image ID" mode is used you are accessing the masks based on the index number of the source images defined in the .pts file.
 
-When the "Mask ID" mode is used you are accessing the masks based upon the index number of the individual mask assets stored in the .pts file.
+When the "Mask ID" mode is used you are accessing the masks based on the index number of the individual mask assets stored in the .pts file.
 
 Typical Node Connections:
 

@@ -10,7 +10,7 @@ These files are located on disk in the Reactor PathMap based folder:
 
 ## Demo PT FBX Camera v001.comp
 
-Read a PTGui .pts JSON file and create an 3D camera by extracting the camera rotation values, focal length, and source image names. The animated camera is then exported to an FBX file that can be loaded into other 3D packages.
+Read a PTGui .pts JSON file and create a 3D camera by extracting the camera rotation values, focal length, and source image names. The animated camera is then exported to an FBX file that can be loaded into other 3D packages.
 
 ![ptRotation Example 1](images/comp-Demo-PT-FBX-Camera.png)
 
@@ -42,7 +42,7 @@ Read a PTGui .pts JSON file and apply the exclude region masking data to a sourc
 
 ## Demo PT Optimal Output Image Size v001.comp
 
-Read a PTGui .pts JSON file and calculate the optimal 360° panoramic output size based upon the source image dimensions and the lens focal length.
+Read a PTGui .pts JSON file and calculate the optimal 360° panoramic output size based on the source image dimensions and the lens focal length.
 
 ![ptOptimumOutputSize Example 1](images/comp-Demo-PT-Optimal-Output-Image-Size-1.png)
 
