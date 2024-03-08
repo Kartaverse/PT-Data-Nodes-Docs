@@ -8,7 +8,7 @@ The Kartaverse "PT Data Nodes" allow you to access PTGui Pro v11-12 based .pts (
 
 The PT fuse nodes make it easy to parametrically extract values from a .pts file. Any changes you make in the PTGui project file are automatically reflected in your Fusion node graph.
 
-![FBX Export](images/comp-fbx-export.png)
+![FBX Export](images/comp-Demo-PT-FBX-Camera.png)
 
 ## Software Requirements
 
@@ -24,11 +24,15 @@ To run PT based workflows on your Resolve/Fusion system you will need the follow
 
 - GPL v3
 
+## Example Comps
+
+Several [example Fusion comps](examples) are included to show basic PTGui .pts project file driven nodal workflow concepts.
+
 ## Fuse Reference Guide
 
 For more information about the individual PT nodes check out the [Fuse reference guide](fuses).
 
-# PT Node Categories
+## PT Node Categories
 
 The PT data nodes are separated into the following categories and sub-categories based upon the function they perform:
 
