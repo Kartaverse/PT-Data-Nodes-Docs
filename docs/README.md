@@ -4,7 +4,7 @@ By Andrew Hazelden <andrew@andrewhazelden.com>
 
 ## Overview
 
-The Kartaverse "PT Data Nodes" allow you to access PTGui Pro (v11-12) based .pts scene data in Fusion. The PTGui Pro .pts document format is natively stored using JSON encoded data structures.
+The Kartaverse "PT Data Nodes" allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
 
 The PT fuse nodes make it easy to parametrically extract values from a .pts file. Any changes you make in the PTGui project file are automatically reflected in your Fusion node graph.
 

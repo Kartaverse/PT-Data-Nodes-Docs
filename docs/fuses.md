@@ -1,5 +1,7 @@
 # PT Data Node Fuses
 
+The Kartaverse "PT Data Nodes" allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
+
 ## Flow
 
 ### ptSwitch
