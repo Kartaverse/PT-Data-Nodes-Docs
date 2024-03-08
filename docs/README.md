@@ -1,14 +1,14 @@
-# PT Data Nodes
+# Kartaverse PT Data Nodes
 
 By Andrew Hazelden <andrew@andrewhazelden.com>
 
 ## Overview
 
-The Kartaverse "PT Data Nodes" allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
+The "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
 
-The PT fuse nodes make it easy to parametrically extract values from a .pts file. Any changes you make in the PTGui project file are automatically reflected in your Fusion node graph.
+The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Any changes you make in the PTGui project file are automatically reflected in your Fusion node graph.
 
-![FBX Export](images/comp-Demo-PT-FBX-Camera.png)
+![FBX Export](docs/images/comp-Demo-PT-FBX-Camera.png)
 
 ## Software Requirements
 
@@ -16,9 +16,9 @@ To run PT based workflows on your Resolve/Fusion system you will need the follow
 
 - BMD Resolve (Free) / Resolve Studio v18.5+
 - BMD Fusion Studio
-- Reactor Package Manager (Free)
-- Vonk Ultra Data Nodes (via Reactor)
-- PT Data Nodes
+- [Reactor Package Manager](https://www.steakunderwater.com/wesuckless/viewtopic.php?f=32&t=3067) (Free)
+- [Vonk Ultra Data Nodes](https://gitlab.com/AndrewHazelden/Vonk) (via Reactor)
+- [Kartaverse PT Data Nodes](https://github.com/Kartaverse/PT-Data-Nodes-Docs)
 
 ## Open Source Software License Term
 
