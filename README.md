@@ -26,7 +26,7 @@ To run PT based workflows on your Resolve/Fusion system you will need the follow
 
 ## Fuse Reference Guide
 
-For more information about the individual PT nodes check out the [Fuse reference guide](https://kartaverse.github.io/PT-Data-Nodes-Docs/).
+For more information about the individual PT nodes check out the [Fuse reference guide](https://kartaverse.github.io/PT-Data-Nodes-Docs/#/fuses).
 
 # PT Node Categories
 
