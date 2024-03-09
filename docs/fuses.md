@@ -1,6 +1,6 @@
 # PT Data Node Fuses
 
-The Kartaverse "PT Data Nodes" allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
+The Kartaverse "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators. The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Changes made in the PTGui project file are automatically reflected in your Fusion node graph.
 
 ## Flow
 
@@ -12,6 +12,11 @@ The "ptSwitch" node allows you to toggle between several different ScriptVal bas
 
 The "Which" control on the ptSwitch node is used to select the current input connection you would like to access ScriptVal data from.
 
+Typical Node Connections:
+
+        ptLoader1 > ptSwitch1 > ptImage1
+        ptLoader2 > ptSwitch1
+        ptLoader3 > ptSwitch1
 
 #### Comparing Multiple PTGui Files
 
@@ -74,11 +79,19 @@ The "ptOutputImage" node loads the final rendered panorama image that is referen
 
 ![ptOutputImage](images/fuse-ptOutputImage.png)
 
-In the PTGui "Create Panorama" tab it is possible to define sub-folders you would like a rendered image to be placed within by adding a folder name and a slash before the filename entered in the "Output File" text field:
+Typical Node Connections:
+
+        ptLoader > ptOutputImage > ColorCorrector
+
+![ptOutputImage Tip 1](images/tip-ptOutputImage-1.png)
+
+#### Specifying a Custom Filename in PTGui
+
+In the PTGui "Create Panorama" tab it is possible to define sub-folders you would like a rendered image to be placed within. This is done by adding a folder name and a slash before the filename entered in the "Output File" text field:
 
         Render/Output.jpg
 
-![ptOutputImage Tip 1](images/tip-ptOutputImage-1.png)
+![ptOutputImage Tip 2](images/tip-ptOutputImage-2.png)
 
 ## IO
 
@@ -127,14 +140,14 @@ If you want to extract the "red" exclude masking information, use a Garbage Matt
 
 ![ptMask Tip 1](images/tip-ptMask-MatteControl-1.png)
 
-![ptMask Tip 2](images/tip-ptMask-MatteControl-2.png)
-
 Typical Masking Connections:
 
         ptLoader.ScriptVal > ptMask1.ScriptVal
         ptMask1.Output > MatteControl.Garbage.Matte
         ptLoader.ScriptVal > ptImage.ScriptVal
         ptImage.Output > MatteControl.Background
+
+![ptMask Tip 2](images/tip-ptMask-MatteControl-2.png)
 
 ## Matrix
 
@@ -148,7 +161,9 @@ The Vonk Ultra vMatrix nodes allow you to perform matrix math like addition, sub
 
 Typical Node Connections:
 
-        ptLoader > ptMatrix > vMatrixToRotation > Camera3D
+        ptLoader > ptMatrix > vMatrixToRotation.Rotate.X > Camera3D.Transform3DOp.Rotate.X
+        ptLoader > ptMatrix > vMatrixToRotation.Rotate.Y > Camera3D.Transform3DOp.Rotate.Y
+        ptLoader > ptMatrix > vMatrixToRotation.Rotate.Z > Camera3D.Transform3DOp.Rotate.Z
 
 ### ptRotation
 
@@ -158,7 +173,9 @@ The "ptRotation" node allows you to directly access the XYZ rotation values for 
 
 Typical Node Connections:
 
-        ptLoader > ptRotation > Camera3D
+        ptLoader > ptRotation.Rotate.X > Camera3D.Transform3DOp.Rotate.X
+        ptLoader > ptRotation.Rotate.Y > Camera3D.Transform3DOp.Rotate.Y
+        ptLoader > ptRotation.Rotate.Z > Camera3D.Transform3DOp.Rotate.Z
 
 ## Number
 
@@ -216,7 +233,6 @@ Typical Node Connections:
 
 ### ptImageFilename
 
-
 The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file. The output is a string datatype.
 
 ![ptImageFilename](images/fuse-ptImageFilename.png)
@@ -241,7 +257,36 @@ Typical Node Connections:
 
         ptLoader > ptOutputFilename > vTextViewer
 
+### ptDocFilename
+
+The "ptDocFilename" node returns the filename of the PTGui .pts document that was specified in the ptLoader node. The output is a string datatype.
+
+Typical Node Connections:
+
+        ptLoader > ptDocFilename > vTextViewer
+
 ## Utility
+
+### ptBatchStitcher
+
+The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph. The filename for the .pts document to be stitched is defined using an upstream ptLoader node.
+
+![ptBatchStitcher](images/fuse-ptBatchStitcher.png)
+
+The "PTGui Pro Executable" section allows you to manually customize the program path used for locating PTGui Pro on disk.
+
+The "Overwrite Image" checkbox allows to you decide if you want to skip the batch rendering task if the PTGui output image already exists on disk. This saves time by avoiding the re-rendering images if not desired.
+
+The "Use .pts Parent Directory" checkbox is used when the "Overwrite Image" checkbox is disabled. It helps define the PTGui output filename if you are using a manual filename that is a relative filepath.
+
+The "Show Dump" control allows you to see a diagnostic output in the Console window for the command line stitching task.
+Typical Node Connections:
+
+        ptLoader > ptBatchStitcher > ptOutputImage > ColorCorrector
+
+![ptBatchStitcher Tip](images/tip-ptBatchStitcher.png)
+
+Note: The ptBatchStitcher node relies on a copy of PTGui Pro existing on your hard disk.
 
 ### ptInfo
 
@@ -264,7 +309,6 @@ The formula used for the optimum panoramic output size comes from the following 
 
 ![ptOptimumOutputSize](images/fuse-ptOptimumOutputSize.png)
 
-![ptOptimumOutputSize Tip 1](images/tip-ptOptimumOutputSize-1.png)
 
 Typical Node Connections:
 
@@ -272,3 +316,4 @@ Typical Node Connections:
         ptLoader > ptImageSize.Width > ptOptimumOutputSize.ImageWidth
         vNumberCompReqTime > ptImageSize.Index
 
+![ptOptimumOutputSize Tip 1](images/tip-ptOptimumOutputSize-1.png)

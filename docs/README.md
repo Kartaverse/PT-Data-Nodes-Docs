@@ -4,11 +4,9 @@ By Andrew Hazelden <andrew@andrewhazelden.com>
 
 ## Overview
 
-The "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
+The Kartaverse "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators. The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Changes made in the PTGui project file are automatically reflected in your Fusion node graph.
 
-The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Any changes you make in the PTGui project file are automatically reflected in your Fusion node graph.
-
-![FBX Export](docs/images/comp-Demo-PT-FBX-Camera.png)
+![FBX Export](images/comp-Demo-PT-FBX-Camera.png)
 
 ## Software Requirements
 
@@ -66,11 +64,12 @@ Point
 Text
 - ptImageFilename
 - ptOutputFilename
+- ptDocFilename
 
 Utility
+- ptBatchStitcher
 - ptInfo
 - ptOptimumOutputSize
-
 
 
 ## PT Node Usage
@@ -94,6 +93,8 @@ The "ptRotation" node allows you to directly access the XYZ rotation values for 
 The "ptMatrix" node allows you to send the XYZ rotation values for each PTGui source image to a Vonk Ultra 4x4 transform matrix.
 
 The "ptFocalLength" node allows you to read each of the lenses in the PTGui file. This can be used to drive the focal length on a Camera3D node.
+
+The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph.
 
 ## Known Issues
 

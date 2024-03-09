@@ -8,11 +8,19 @@ These files are located on disk in the Reactor PathMap based folder:
 
         Reactor:/Deploy/Comps/Kartaverse/PT/Demo PT/
 
-## PT Demo OutputImage v001.comp
+## Demo PT Output Image v001.comp
 
 Read a PTGui .pts JSON file and load the final rendered panorama image that is referenced in the PTGui document.
 
-![ptOutputImage Example 1](images/comp-Demo-PT-OutputImage.png)
+![ptOutputImage Example 1](images/comp-Demo-PT-Output-Image.png)
+
+## Demo PT Batch Stitcher v001
+
+Send the currently open .pts document to the PTGui Pro batch stitcher for processing.
+
+![ptBatchStitcher Example 1](images/comp-Demo-PT-Batch-Stitcher-1.png)
+
+![ptBatchStitcher Example 1](images/comp-Demo-PT-Batch-Stitcher-2.png)
 
 ## Demo PT FBX Camera v001.comp
 
