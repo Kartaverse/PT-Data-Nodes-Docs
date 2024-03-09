@@ -72,18 +72,13 @@ Image Sequence Filename Example:
 
 The "ptOutputImage" node loads the final rendered panorama image that is referenced in the PTGui document. The output is an image datatype.
 
-
 ![ptOutputImage](images/fuse-ptOutputImage.png)
-
-Note: This node requires that the PTGui .pts was saved with the "Create Panorama > Output File > [x] Use Default" checkbox disabled. This means you defined the image filename manually in the "Output File" textfield that will be used when a newly stitched panorama is saved to disk.
-
-
-![ptOutputImage Tip 1](images/tip-ptOutputImage-1.png)
 
 In the PTGui "Create Panorama" tab it is possible to define sub-folders you would like a rendered image to be placed within by adding a folder name and a slash before the filename entered in the "Output File" text field:
 
         Render/Output.jpg
 
+![ptOutputImage Tip 1](images/tip-ptOutputImage-1.png)
 
 ## IO
 

@@ -83,6 +83,8 @@ A PT node graph starts with either a "ptLoader" node that imports an existing PT
 
 A "ptImage" node accesses the source images referenced in the .pts file.
 
+A "ptOutputImage" node loads the final rendered panorama image that is referenced in the PTGui document.
+
 A "ptMask" node accesses the hand painted masking data stored in the .pts file. This masking information from the ptMask node can be fed into a MatteControl node set to use a Garbage Matte input connection with a "Garbage Matte > Channel: Red" setting to apply the PTGui "exclude" red matte information to your footage.
 
 The "ptInfo" node peeks into the contents of the live PTGui data stream. This is a handy diagnostic tool.
