@@ -62,9 +62,9 @@ Number
 Point
 
 Text
+- ptDocFilename
 - ptImageFilename
 - ptOutputFilename
-- ptDocFilename
 
 Utility
 - ptBatchStitcher
