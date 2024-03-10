@@ -30,6 +30,8 @@ Several [example Fusion comps](https://kartaverse.github.io/PT-Data-Nodes-Docs/#
 
 For more information about the individual PT nodes check out the [Fuse reference guide](https://kartaverse.github.io/PT-Data-Nodes-Docs/#/fuses).
 
+![Select Tool](docs/images/tip-selecttool.png)
+
 ## PT Node Categories
 
 The PT data nodes are separated into the following categories and sub-categories based on the function they perform:

@@ -30,6 +30,8 @@ Several [example Fusion comps](examples) are included to show basic PTGui .pts p
 
 For more information about the individual PT nodes check out the [Fuse reference guide](fuses).
 
+![Select Tool](images/tip-selecttool.png)
+
 ## PT Node Categories
 
 The PT data nodes are separated into the following categories and sub-categories based on the function they perform:
