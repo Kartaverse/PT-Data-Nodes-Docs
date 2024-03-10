@@ -108,3 +108,7 @@ If you want to connect the output from a "ptImage" or "ptmask" node to Fusion's 
 
 PTGui is very picky about the .pts based JSON files it is willing to load. The ordering of elements and the structure of the file is very important. The ptSaver node at this time does not meet PTGui's file opening JSON standards for formatting.
 
+### ptBatchSticher Node
+
+As of 2024-03-10 the ptBatchSticher node has only been tested on macOS with PTGui v12. Windows and Linux compatibility testing will happen next week.
+
