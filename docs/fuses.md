@@ -304,7 +304,7 @@ Typical Node Connections:
 
 This node allows you to calculate the best output size to use when stitching a 360VR panorama. This calculation is based upon the focal length (in mm), image sensor size (in mm), and the source image size (in pixels).
 
-The output is a number datatype that represents the idea LatLong image width in pixels.
+The output is a number datatype that represents the ideal LatLong image width in pixels.
 
 The formula used for the optimum panoramic output size comes from the following PTGui documentation topics:  
 [How does PTGui calculate the optimum output size of a panorama?](https://ptgui.com/support.html#3_26)
