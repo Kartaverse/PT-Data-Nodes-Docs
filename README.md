@@ -110,5 +110,4 @@ PTGui is very picky about the .pts based JSON files it is willing to load. The o
 
 ### ptBatchSticher Node
 
-As of 2024-03-10 the ptBatchSticher node has only been tested on macOS with PTGui v12. Windows and Linux compatibility testing will happen next week.
-
+As of 2024-03-16 the ptBatchSticher node has been tested on macOS and Windows with PTGui v12. Linux compatibility testing will happen next week.
