@@ -59,6 +59,7 @@ Number
 - ptFocalLength
 - ptImageCount
 - ptImageSize
+- ptLensABC
 - ptLensCount
 
 Point
@@ -67,6 +68,7 @@ Text
 - ptCSV
 - ptDocFilename
 - ptImageFilename
+- ptLensProjection
 - ptOutputFilename
 
 Utility

@@ -215,6 +215,16 @@ Typical Node Connections:
 
         ptLoader > ptImageSize
 
+### ptLensABC
+
+The "ptLensABC" node returns the PTGui A/B/C lens distortion values. This data can be used for lens distortion correction. The output is a set of three number datatypes.
+
+![ptLensABC](images/fuse-ptLensABC.png)
+
+Typical Node Connections:
+
+        ptLoader > ptLensABC
+
 ### ptLensCount
 
 The "ptLensCount" node calculates the total number of PTGui Global Lens entries. The output is a number datatype.
@@ -224,7 +234,6 @@ The "ptLensCount" node calculates the total number of PTGui Global Lens entries.
 Typical Node Connections:
 
         ptLoader > ptLensCount
-
 
 ## Point
 
@@ -277,6 +286,18 @@ If you enable the checkbox "Use .pts Parent Directory" then the relative filepat
 Typical Node Connections:
 
         ptLoader > ptImageFilename > vTextViewer
+
+### ptLensProjection
+
+The "ptLensProjection" node returns the lens type that was used to photograph the source images. The output is a string datatype. 
+
+![ptLensProjection](images/fuse-ptLensProjection.png)
+
+Typical Node Connections:
+
+        ptLoader > ptLensProjection
+
+A common lens projection value is "circularfisheye".
 
 ### ptOutputFilename
 
