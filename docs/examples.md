@@ -22,6 +22,14 @@ Send the currently open .pts document to the PTGui Pro batch stitcher for proces
 
 ![ptBatchStitcher Example 1](images/comp-Demo-PT-Batch-Stitcher-2.png)
 
+## Demo PT CSV Output v001.comp
+
+Read a PTGui .pts JSON file and export a CSV spreadsheet
+
+![ptCSV Example 1](images/comp-Demo-PT-CSV-Output-1.png)
+
+![ptCSV Example 2](images/comp-Demo-PT-CSV-Output-2.png)
+
 ## Demo PT FBX Camera v001.comp
 
 Read a PTGui .pts JSON file and create a 3D camera by extracting the camera rotation values, focal length, and source image names. The animated camera is then exported to an FBX file that can be loaded into other 3D packages.

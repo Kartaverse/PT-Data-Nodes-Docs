@@ -229,9 +229,42 @@ Typical Node Connections:
 ## Point
 
 
-
-
 ## Text
+
+### ptCSV
+
+The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet. The output is a string datatype.
+
+![ptCSV](images/fuse-ptCSV.png)
+
+The checkbox "Export CSV Headers" saves out a header row at the top of the CSV file with labels for each column. 
+
+The checkbox "Export Image Filename" saves out the source image filepath. If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
+
+The checkbox "Export Image Include" saves out if the source image is enabled in the PTGui "Create Panorama > Advanced > Include Images" section. 
+
+The checkbox "Export Image Size" saves out the source image width and height in pixels. 
+
+The checkbox "Export Projection" saves out the source image lens model such as "circularfisheye".
+
+The checkbox "Export Focal Length" saves out the value in mm (millimetres).
+
+The checkbox "Export lens Distortion" saves out A/B/C distortion values, along with lens shift and shear properties.
+
+The checkbox "Export Rotation" saves out the source image XYZ rotation values.
+
+
+Sample CSV Output:
+
+        Filename,Include,Image Width,Image Height,Projection,Focal Length,A,B,C,Shift Longside,Shift Shortside,Horizontal Shear,Vertical Shear,X Rotation,Y Rotation,Z Rotation,
+        Media/CameraA.0001.jpg,true,2700,2700,circularfisheye,9.5785368257348,-0.14987643933724,0.28534438433411,-0.24576702921261,-0.00075907084037514,0.0030734326877189,0,0,-1.3043395671529,119.34915830069,0.44474477585746,
+        Media/CameraB.0001.jpg,true,2700,2700,circularfisheye,9.5785368257348,-0.14987643933724,0.28534438433411,-0.24576702921261,-0.00075907084037514,0.0030734326877189,0,0,-1.3043395672987,0.027770169839528,-0.33601700522601,
+        Media/CameraC.0001.jpg,true,2700,2700,circularfisheye,9.5785368257348,-0.14987643933724,0.28534438433411,-0.24576702921261,-0.00075907084037514,0.0030734326877189,0,0,-1.3043395669922,-119.34915830069,0.22850199695995,
+
+Typical Node Connections:
+
+        ptLoader > ptCSV > vTextToFile > vTextViewer
+
 
 ### ptImageFilename
 

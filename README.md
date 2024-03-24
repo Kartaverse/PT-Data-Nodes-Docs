@@ -64,6 +64,7 @@ Number
 Point
 
 Text
+- ptCSV
 - ptDocFilename
 - ptImageFilename
 - ptOutputFilename
@@ -98,6 +99,8 @@ The "ptFocalLength" node allows you to read each of the lenses in the PTGui file
 
 The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph.
 
+The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet.
+
 ## Known Issues
 
 ### Texture2D Node
@@ -110,4 +113,4 @@ PTGui is very picky about the .pts based JSON files it is willing to load. The o
 
 ### ptBatchSticher Node
 
-As of 2024-03-16 the ptBatchSticher node has been tested on macOS and Windows with PTGui v12. Linux compatibility testing will happen next week.
+The ptBatchSticher node has been tested on macOS and Windows with PTGui v12.
