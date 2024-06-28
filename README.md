@@ -99,7 +99,7 @@ The "ptMatrix" node allows you to send the XYZ rotation values for each PTGui so
 
 The "ptFocalLength" node allows you to read each of the lenses in the PTGui file. This can be used to drive the focal length on a Camera3D node.
 
-The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph.
+The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph. This node has been tested on macOS, Windows, and Linux with PTGui Pro v12.
 
 The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet.
 
