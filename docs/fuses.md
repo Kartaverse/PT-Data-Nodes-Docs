@@ -281,9 +281,13 @@ The "ptImageFilename" node returns the source image filename that PTGui uses whe
 
 ![ptImageFilename](images/fuse-ptImageFilename.png)
 
-The "Asset Mode" control set to "Image ID" allows you to return a single image's filename using by selecting the exact source image using the "Image ID" based index value. The "IFL" (Image File List) option returns a multi-line text block with all of the source image filenames returned, in a one filename per -line format.
+The "Asset Mode" control can be set to either to "Image ID" or "IFL".
 
-The "Parse" menu lets you choose if you want to extract a specific part of the returned filename.
+When the "Image ID" mode is used you are accessing the image based on the index number of the source images defined in the .pts file.
+
+When the "IFL" (Image File List) mode is used, a multi-line text block is returned with all of the source image filenames included in a one filename per-line format.
+
+The "Parse" menu lets you choose if you want to extract a specific part of the returned filename. If you are outputting an IFL file, then the "Parse" control should be set to "FullName".
 
 If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
 
