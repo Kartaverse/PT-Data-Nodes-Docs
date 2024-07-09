@@ -242,7 +242,7 @@ Typical Node Connections:
 
 ### ptCSV
 
-The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet. The output is a string datatype.
+The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet. The output is a text datatype.
 
 ![ptCSV](images/fuse-ptCSV.png)
 
@@ -277,7 +277,7 @@ Typical Node Connections:
 
 ### ptImageFilename
 
-The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file. The output is a string datatype.
+The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file. The output is a text datatype.
 
 ![ptImageFilename](images/fuse-ptImageFilename.png)
 
@@ -297,7 +297,7 @@ Typical Node Connections:
 
 ### ptLensProjection
 
-The "ptLensProjection" node returns the lens type that was used to photograph the source images. The output is a string datatype. 
+The "ptLensProjection" node returns the lens type that was used to photograph the source images. The output is a text datatype. 
 
 ![ptLensProjection](images/fuse-ptLensProjection.png)
 
@@ -309,7 +309,7 @@ A common lens projection value is "circularfisheye".
 
 ### ptOutputFilename
 
-The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk. The output is a string datatype.
+The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk. The output is a text datatype.
 
 ![ptOutputFilename](images/fuse-ptOutputFilename.png)
 
@@ -325,7 +325,7 @@ Typical Node Connections:
 
 ### ptDocFilename
 
-The "ptDocFilename" node returns the filename of the PTGui .pts document that was specified in the ptLoader node. The output is a string datatype.
+The "ptDocFilename" node returns the filename of the PTGui .pts document that was specified in the ptLoader node. The output is a text datatype.
 
 Typical Node Connections:
 
