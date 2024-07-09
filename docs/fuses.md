@@ -281,6 +281,10 @@ The "ptImageFilename" node returns the source image filename that PTGui uses whe
 
 ![ptImageFilename](images/fuse-ptImageFilename.png)
 
+The "Asset Mode" control set to "Image ID" allows you to return a single image's filename using by selecting the exact source image using the "Image ID" based index value. The "IFL" (Image File List) option returns a multi-line text block with all of the source image filenames returned, in a one filename per -line format.
+
+The "Parse" menu lets you choose if you want to extract a specific part of the returned filename.
+
 If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
 
 Typical Node Connections:
@@ -306,6 +310,8 @@ The "ptOutputFilename" node returns the filename that PTGui will use when saving
 ![ptOutputFilename](images/fuse-ptOutputFilename.png)
 
 This information is based upon the value saved in the .pts file using the content defined in the PTGui "Create Panorama > Output file:" user interface control. This field can sometimes be empty.
+
+The "Parse" menu lets you choose if you want to extract a specific part of the returned filename.
 
 If you enable the checkbox "Use .pts Parent Directory" then the relative filepath for the image filename will be expanded to an absolute filepath.
 
