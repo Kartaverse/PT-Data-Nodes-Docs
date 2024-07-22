@@ -1,16 +1,18 @@
-# PT Data Node Fuses
+# Fuses
 
-The Kartaverse "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators. The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Changes made in the PTGui project file are automatically reflected in your Fusion node graph.
+> The Kartaverse "PT" data nodes allow you to access PTGui Pro v11-12 based .pts (JSON) 360VR stitching project files in Fusion using parametric node-based operators.
 
-![Select Tool](images/tip-selecttool.png)
+The letters "PT" stand for Pano Tools. The PT fuse nodes make it easy to parametrically extract values from a .pts file. Changes made in the PTGui project file are automatically reflected in your Fusion node graph.
 
-## Flow
+![Select Tool](Images/tip-selecttool.png)
+
+## Flow Category
 
 ### ptSwitch
 
 The "ptSwitch" node allows you to toggle between several different ScriptVal based input connections to select which data stream you want to access.
 
-![ptSwitch](images/fuse-ptSwitch.png)
+![ptSwitch](Images/fuse-ptSwitch.png)
 
 The "Which" control on the ptSwitch node is used to select the current input connection you would like to access ScriptVal data from.
 
@@ -26,13 +28,13 @@ A common use case for the ptSwitch node would be to allow you to have multiple p
 
 You can then change the ptSwitch node's "Which" control to cycle through the different PTGui .pts files quickly to compare the results in a consistent and organized fashion.
 
-![ptSwitch Tip 1](images/tip-ptSwitch-1.png)
+![ptSwitch Tip 1](Images/tip-ptSwitch-1.png)
 
 ### ptWireless
 
 The ptWireless node allows you to create links between nodes without displaying a wireline connection in the node graph. This can help make a complex comp tidy if there are wires crossing all over the place.
 
-![ptWireless](images/fuse-ptWireless.png)
+![ptWireless](Images/fuse-ptWireless.png)
 
 The Wireless link connection is created by holding down the middle mouse button, while dragging the node from the node graph into the Inspector window where the ptWireless node "Input" attribute is. The name of the connected node will be written into the text field.
 
@@ -48,15 +50,15 @@ or
 
         ptLoader > ptWireless > ptImage
 
-![ptWireless Tip 1](images/tip-ptWireless-1.png)
+![ptWireless Tip 1](Images/tip-ptWireless-1.png)
 
-## Image
+## Image Category
 
 ### ptImage
 
 A "ptImage" node accesses the source images referenced in the .pts file.  The output is an image datatype.
 
-![ptImage](images/fuse-ptImage.png)
+![ptImage](Images/fuse-ptImage.png)
 
 The "Index" control allows you to cycle through each of the source images. If you move the Index control past the number of source images found in the .pts file it will hold on to the last image.
 
@@ -65,7 +67,7 @@ Typical Node Connections:
         ptLoader > ptImage > ColorCorrector
 
 
-![ptImage Tip 1](images/tip-ptImage-1.png)
+![ptImage Tip 1](Images/tip-ptImage-1.png)
 
 #### Image Sequence Handling
 
@@ -79,13 +81,13 @@ Image Sequence Filename Example:
 
 The "ptOutputImage" node loads the final rendered panorama image that is referenced in the PTGui document. The output is an image datatype.
 
-![ptOutputImage](images/fuse-ptOutputImage.png)
+![ptOutputImage](Images/fuse-ptOutputImage.png)
 
 Typical Node Connections:
 
         ptLoader > ptOutputImage > ColorCorrector
 
-![ptOutputImage Tip 1](images/tip-ptOutputImage-1.png)
+![ptOutputImage Tip 1](Images/tip-ptOutputImage-1.png)
 
 #### Specifying a Custom Filename in PTGui
 
@@ -93,15 +95,15 @@ In the PTGui "Create Panorama" tab it is possible to define sub-folders you woul
 
         Render/Output.jpg
 
-![ptOutputImage Tip 2](images/tip-ptOutputImage-2.png)
+![ptOutputImage Tip 2](Images/tip-ptOutputImage-2.png)
 
-## IO
+## IO Category
 
 ### ptLoader
 
 A "ptLoader" node imports an existing PTGui .pts file from disk. The output from the ptLoader node is a Fusion ScriptVal data type that stores the PTGui information inside a Lua table structure that can be read by other nodes.
 
-![ptLoader](images/fuse-ptLoader.png)
+![ptLoader](Images/fuse-ptLoader.png)
 
 This node supports the use of Fusion "PathMaps". This allows short form values like "Comp:/" to be used when you want to define a .pts file as being located in the same based folder as the Fusion Studio .comp file.
 
@@ -109,20 +111,20 @@ This node supports the use of Fusion "PathMaps". This allows short form values l
 
 A "ptSaver" node exports the Fusion ScriptVal content back to a JSON file. 
 
-![ptSaver](images/fuse-ptSaver.png)
+![ptSaver](Images/fuse-ptSaver.png)
 
 This node supports the use of Fusion "PathMaps". This allows short form values like "Comp:/" to be used when you want to define a .pts file as being located in the same based folder as the Fusion Studio .comp file.
 
 Note: PTGui is very picky about the .pts based JSON files it is willing to load. The ordering of elements and the structure of the file is very important. The ptSaver node at this time does not meet PTGui's file opening JSON standards for formatting.
 
 
-## Mask
+## Mask Category
 
 ### ptMask
 
 A "ptMask" node accesses the hand painted masking data stored in the .pts file. The output is an image datatype.
 
-![ptMask](images/fuse-ptMask.png)
+![ptMask](Images/fuse-ptMask.png)
 
 The "Asset Mode" control can be set to "Image ID" or "Mask ID".
 
@@ -140,7 +142,7 @@ The masking information from the ptMask node can be fed into a MatteControl node
 
 If you want to extract the "red" exclude masking information, use a Garbage Matte input connection with a "Garbage Matte > Channel: Red" setting to apply the PTGui "exclude" red matte information to your footage.
 
-![ptMask Tip 1](images/tip-ptMask-MatteControl-1.png)
+![ptMask Tip 1](Images/tip-ptMask-MatteControl-1.png)
 
 Typical Masking Connections:
 
@@ -149,15 +151,15 @@ Typical Masking Connections:
         ptLoader.ScriptVal > ptImage.ScriptVal
         ptImage.Output > MatteControl.Background
 
-![ptMask Tip 2](images/tip-ptMask-MatteControl-2.png)
+![ptMask Tip 2](Images/tip-ptMask-MatteControl-2.png)
 
-## Matrix
+## Matrix Category
 
 ### ptMatrix
 
 The "ptMatrix" node allows you to send the XYZ rotation values for each PTGui source image to a Vonk Ultra 4x4 transform matrix.
 
-![ptMatrix](images/fuse-ptMatrix.png)
+![ptMatrix](Images/fuse-ptMatrix.png)
 
 The Vonk Ultra vMatrix nodes allow you to perform matrix math like addition, subtraction, and multiplication. This allows you to offset the position of the images on the fly.
 
@@ -171,7 +173,7 @@ Typical Node Connections:
 
 The "ptRotation" node allows you to directly access the XYZ rotation values for each PTGui source image. This rotation data can be used to rotate a Camera3D node.
 
-![ptRotation](images/fuse-ptRotation.png)
+![ptRotation](Images/fuse-ptRotation.png)
 
 Typical Node Connections:
 
@@ -179,7 +181,7 @@ Typical Node Connections:
         ptLoader > ptRotation.Rotate.Y > Camera3D.Transform3DOp.Rotate.Y
         ptLoader > ptRotation.Rotate.Z > Camera3D.Transform3DOp.Rotate.Z
 
-## Number
+## Number Category
 
 ### ptFocalLength
 
@@ -187,7 +189,7 @@ The "ptFocalLength" node allows you to read the focal length value (in millimetr
 
 The output is a number datatype.
 
-![ptFocalLength](images/fuse-ptFocalLength.png)
+![ptFocalLength](Images/fuse-ptFocalLength.png)
 
 The focal length value output by this node can also be used with the "ptOptimumOutputSize" node.
 
@@ -199,7 +201,7 @@ Typical Node Connections:
 
 The "ptImageCount" node returns the total number of source images in a PTGui .pts document.  The output is a number datatype.
 
-![ptImageCount](images/fuse-ptImageCount.png)
+![ptImageCount](Images/fuse-ptImageCount.png)
 
 Typical Node Connections:
 
@@ -209,7 +211,7 @@ Typical Node Connections:
 
 The "ptImageSize" node returns the image width and image height parameters for a PTGui .pts source image. The output is a pair of number datatypes.
 
-![ptImageSize](images/fuse-ptImageSize.png)
+![ptImageSize](Images/fuse-ptImageSize.png)
 
 Typical Node Connections:
 
@@ -219,7 +221,7 @@ Typical Node Connections:
 
 The "ptLensABC" node returns the PTGui A/B/C lens distortion values. This data can be used for lens distortion correction. The output is a set of three number datatypes.
 
-![ptLensABC](images/fuse-ptLensABC.png)
+![ptLensABC](Images/fuse-ptLensABC.png)
 
 Typical Node Connections:
 
@@ -229,22 +231,23 @@ Typical Node Connections:
 
 The "ptLensCount" node calculates the total number of PTGui Global Lens entries. The output is a number datatype.
 
-![ptLensCount](images/fuse-ptLensCount.png)
+![ptLensCount](Images/fuse-ptLensCount.png)
 
 Typical Node Connections:
 
         ptLoader > ptLensCount
 
-## Point
+## Point Category
 
+TBD
 
-## Text
+## Text Category
 
 ### ptCSV
 
 The "ptCSV" node allows you to extract data from a PTGui file and format it as a CSV (comma separated value) based spreadsheet. The output is a text datatype.
 
-![ptCSV](images/fuse-ptCSV.png)
+![ptCSV](Images/fuse-ptCSV.png)
 
 The checkbox "Export CSV Headers" saves out a header row at the top of the CSV file with labels for each column. 
 
@@ -279,7 +282,7 @@ Typical Node Connections:
 
 The "ptImageFilename" node returns the source image filename that PTGui uses when loading an image from the .pts file. The output is a text datatype.
 
-![ptImageFilename](images/fuse-ptImageFilename.png)
+![ptImageFilename](Images/fuse-ptImageFilename.png)
 
 The "Asset Mode" control can be set to either to "Image ID" or "IFL".
 
@@ -299,7 +302,7 @@ Typical Node Connections:
 
 The "ptLensProjection" node returns the lens type that was used to photograph the source images. The output is a text datatype. 
 
-![ptLensProjection](images/fuse-ptLensProjection.png)
+![ptLensProjection](Images/fuse-ptLensProjection.png)
 
 Typical Node Connections:
 
@@ -311,7 +314,7 @@ A common lens projection value is "circularfisheye".
 
 The "ptOutputFilename" node returns the filename that PTGui will use when saving a stitched panorama to disk. The output is a text datatype.
 
-![ptOutputFilename](images/fuse-ptOutputFilename.png)
+![ptOutputFilename](Images/fuse-ptOutputFilename.png)
 
 This information is based upon the value saved in the .pts file using the content defined in the PTGui "Create Panorama > Output file:" user interface control. This field can sometimes be empty.
 
@@ -331,13 +334,13 @@ Typical Node Connections:
 
         ptLoader > ptDocFilename > vTextViewer
 
-## Utility
+## Utility Category
 
 ### ptBatchStitcher
 
 The "ptBatchStitcher" node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph. The filename for the .pts document to be stitched is defined using an upstream ptLoader node.
 
-![ptBatchStitcher](images/fuse-ptBatchStitcher.png)
+![ptBatchStitcher](Images/fuse-ptBatchStitcher.png)
 
 The "PTGui Pro Executable" section allows you to manually customize the program path used for locating PTGui Pro on disk.
 
@@ -350,7 +353,7 @@ Typical Node Connections:
 
         ptLoader > ptBatchStitcher > ptOutputImage > ColorCorrector
 
-![ptBatchStitcher Tip](images/tip-ptBatchStitcher.png)
+![ptBatchStitcher Tip](Images/tip-ptBatchStitcher.png)
 
 Note: The ptBatchStitcher node relies on a copy of PTGui Pro existing on your hard disk.
 
@@ -358,7 +361,7 @@ Note: The ptBatchStitcher node relies on a copy of PTGui Pro existing on your ha
 
 The "ptInfo" node peeks into the contents of the live PTGui data stream. This is a handy diagnostic tool. The ptInfo input and output connections are ScriptVal datatypes.
 
-![ptInfo](images/fuse-ptInfo.png)
+![ptInfo](Images/fuse-ptInfo.png)
 
 Typical Node Connections:
 
@@ -373,7 +376,7 @@ The output is a number datatype that represents the ideal LatLong image width in
 The formula used for the optimum panoramic output size comes from the following PTGui documentation topics:  
 [How does PTGui calculate the optimum output size of a panorama?](https://ptgui.com/support.html#3_26)
 
-![ptOptimumOutputSize](images/fuse-ptOptimumOutputSize.png)
+![ptOptimumOutputSize](Images/fuse-ptOptimumOutputSize.png)
 
 
 Typical Node Connections:
@@ -382,4 +385,4 @@ Typical Node Connections:
         ptLoader > ptImageSize.Width > ptOptimumOutputSize.ImageWidth
         vNumberCompReqTime > ptImageSize.Index
 
-![ptOptimumOutputSize Tip 1](images/tip-ptOptimumOutputSize-1.png)
+![ptOptimumOutputSize Tip 1](Images/tip-ptOptimumOutputSize-1.png)
