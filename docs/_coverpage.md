@@ -6,7 +6,7 @@
 
 > Accelerate and automate your 360VR stitching workflows
 
-- The PT nodes let you import PTGui Pro .pts (JSON) 360VR stitching projects files into a Resolve/Fusion node graph
+- The PT nodes let you import PTGui Pro .pts (JSON) 360VR stitching projects files into a BMD Resolve/Fusion node graph
 
 - (Scroll down for more info...)
 
