@@ -66,7 +66,6 @@ Typical Node Connections:
 
         ptLoader > ptImage > ColorCorrector
 
-
 ![ptImage Tip 1](Images/tip-ptImage-1.png)
 
 #### Image Sequence Handling
@@ -114,9 +113,6 @@ A "ptSaver" node exports the Fusion ScriptVal content back to a JSON file.
 ![ptSaver](Images/fuse-ptSaver.png)
 
 This node supports the use of Fusion "PathMaps". This allows short form values like "Comp:/" to be used when you want to define a .pts file as being located in the same based folder as the Fusion Studio .comp file.
-
-Note: PTGui is very picky about the .pts based JSON files it is willing to load. The ordering of elements and the structure of the file is very important. The ptSaver node at this time does not meet PTGui's file opening JSON standards for formatting.
-
 
 ## Mask Category
 
