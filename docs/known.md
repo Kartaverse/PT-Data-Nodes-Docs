@@ -6,6 +6,4 @@ If you want to connect the output from a "ptImage" or "ptmask" node to Fusion's 
 
 ## STMap Creation
 
-You need to have a copy of PTGui Pro v11-13+ if you wish to use the ptSTMap and ptBatchStitcher nodes to create a set of STMap based warping template images.
-
-The regular PTGui (non pro) version is unable to save out HDR (High Dynamic Range) images.
+You need to have a copy of PTGui Pro v11-13+ if you wish to use the ptSTMap and ptBatchStitcher nodes to create a set of STMap based warping template images. The regular PTGui (non pro) version is unable to save out HDR (High Dynamic Range) images.
