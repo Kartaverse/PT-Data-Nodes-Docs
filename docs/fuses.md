@@ -114,6 +114,25 @@ A "ptSaver" node exports the Fusion ScriptVal content back to a JSON file.
 
 This node supports the use of Fusion "PathMaps". This allows short form values like "Comp:/" to be used when you want to define a .pts file as being located in the same based folder as the Fusion Studio .comp file.
 
+### ptSTMap
+
+The "ptSTMap" node edits a PTGui Pro .pts file so it generates a set of STMap warping templates. This approach is useful for allowing a compositing package or NLE to perform high speed panoramic video stitching.
+
+![ptSTMap](Images/fuse-ptSTMap.png)
+
+The "ptSTMap" and "ptBatchStitcher" nodes are typically used together so they automatically generate and render the modified .pts file.
+
+When using the "ptSTMap" node, a Kartaverse "kvrSTMapGenerator" node is connected to the "ptSTMap" node's "Input" connection. This creates the default STMap warping template gradient is used to replace the image references in the modified .pts file. The resolution of the STmap gradient is defined by the Background node that feeds into the "kvrSTMapGenerator" node.
+
+When the "ptSTMap" node is rendered, it saves an edited .pts file to disk, as well as saving a set of initial STMap gradient patterns.
+
+The resolution of the final .pts file's batch rendered "STmap layers" is defined in PTGui Pro's "Create Panorama" tab using the "Width x height" input fields.
+
+Typical Node Connections:
+
+        Background > kvrSTMapGenerator > ptSTMap.Input
+        ptLoader > ptSTMap.ScriptVal > ptBatchStitcher
+
 ## Mask Category
 
 ### ptMask

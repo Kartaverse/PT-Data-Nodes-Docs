@@ -29,6 +29,7 @@ The PT data nodes are separated into the following categories and sub-categories
 **IO**
 - ptLoader
 - ptSaver
+- ptSTMap
 
 **Mask**
 - ptMask
@@ -73,6 +74,8 @@ The `ptRotation` node allows you to directly access the XYZ rotation values for 
 The `ptMatrix` node allows you to send the XYZ rotation values for each PTGui source image to a Vonk Ultra 4x4 transform matrix.
 
 The `ptFocalLength` node allows you to read each of the lenses in the PTGui file. This can be used to drive the focal length on a Camera3D node.
+
+The `ptSTMap` node edits a .pts project file so it generates an STMap warping template.
 
 The `ptBatchStitcher` node sends a .pts project file to PTGui Pro for batch stitching via the command line. This allows you to embed an external stitching task inside a Fusion node graph. This node has been tested on macOS, Windows, and Linux with PTGui Pro v12.
 
