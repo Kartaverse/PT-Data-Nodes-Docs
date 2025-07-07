@@ -128,6 +128,8 @@ When the "ptSTMap" node is rendered, it saves an edited .pts file to disk, as we
 
 The resolution of the final .pts file's batch rendered "STmap layers" is defined in PTGui Pro's "Create Panorama" tab using the "Width x height" input fields.
 
+Check out the [KartaVR Workflows | Creating ST Maps](https://docs.google.com/document/d/1lQ-wc9ucLJqj-HL7iKMNWA71klV5O1fk2-JicRB6gDY/edit?usp=sharing) guide if you want more details on STMap workflows that involve PTGui.
+
 Typical Node Connections:
 
         Background > kvrSTMapGenerator > ptSTMap.Input
