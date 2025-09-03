@@ -122,6 +122,8 @@ The "ptSTMap" node edits a PTGui Pro .pts file so it generates a set of STMap wa
 
 When using ptSTMap node based workflows, it is a good idea to use a "name.####.ext" approach to naming the source imagery in your .pts file. The source imagery that is present in the initial .pts file you import via a ptLoader node needs to have an image sequence style frame number at the end of the filename before the image filetype extension.
 
+Also, to keep things tidy, it is helpful to place the media accessed by the .pts file in a subfolder like "Media" that is at the same folder hierarchy level as the .pts document and the generated "stmap.pts" output.
+
 The "ptSTMap" and "ptBatchStitcher" nodes are typically used together so they automatically generate and render the modified .pts file.
 
 When using the "ptSTMap" node, a Kartaverse "kvrSTMapGenerator" node is connected to the "ptSTMap" node's "Input" connection. This creates the default STMap warping template gradient is used to replace the image references in the modified .pts file. The resolution of the STmap gradient is defined by the Background node that feeds into the "kvrSTMapGenerator" node.
