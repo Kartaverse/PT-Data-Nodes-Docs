@@ -16,4 +16,3 @@
 - **Contact**
   - [Email](mailto:andrew@andrewhazelden.com)
   - [GitHub](https://github.com/AndrewHazelden)
-  - [LinkedIn](https://www.linkedin.com/in/andrewhazelden/)
